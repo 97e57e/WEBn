@@ -35,20 +35,31 @@
             margin: 0;
             padding: 20px;
         }
-        
-        #grid{
+
+        #grid {
             display: grid;
             grid-template-columns: 150px 1fr;
         }
-        
-        #grid ol{
+
+        #grid ol {
             padding-left: 40px;
         }
-        
-        #article{
+
+        #article {
             padding-left: 40px;
         }
-        
+
+        @media(max-width:700px) {
+            #grid {
+                display: block;
+            }
+            ol {
+                border-right: none;
+                width: 100px;
+                margin: 0;
+                padding: 20px;
+            }
+        }
 
     </style>
 </head>
