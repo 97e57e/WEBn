@@ -52,15 +52,16 @@
 
 <body>
     <h1><a href="index.html">WEB</a></h1>
-    <input id="night_day" type="button" value="NIGHT" onclick="
-     if(document.querySelector('#night_day').value === 'NIGHT'){
-     document.querySelector('body').style.backgroundColor ='black';
-     document.querySelector('body').style.color ='white';
-     document.querySelector('#night_day').value = 'DAY';
+    <input type="button" value="NIGHT" onclick="
+     var target = document.querySelector('body');
+     if(this.value === 'NIGHT'){
+     target.style.backgroundColor ='black';
+     target.style.color ='white';
+     this.value = 'DAY';
      } else{
-     document.querySelector('body').style.backgroundColor ='white';
-     document.querySelector('body').style.color ='black';
-     document.querySelector('#night_day').value = 'NIGHT';
+     target.style.backgroundColor ='white';
+     target.style.color ='black';
+     this.value = 'NIGHT';
      }
     ">
     <ol>
