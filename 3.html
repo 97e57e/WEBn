@@ -2,24 +2,41 @@
 <html>
 
 <head>
-    <title>JavaScript</title>
     <meta charset="utf-8">
     <title>javaScript</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body style="">
+<body>
     <h1><a href="index.html">WEB</a></h1>
+    
     <input type="button" value="NIGHT" onclick="
+                                                    
      var target = document.querySelector('body');
      if(this.value === 'NIGHT'){
      target.style.backgroundColor ='black';
      target.style.color ='white';
      this.value = 'DAY';
+                                                    
+     var alist = document.querySelectorAll('a');
+            var i = 0;
+            while (i < alist.length) {
+                console.log(alist[i]);
+                alist[i].style.color = 'powderblue';
+                i = i + 1;
+            }                                                
      } else{
      target.style.backgroundColor ='white';
      target.style.color ='black';
      this.value = 'NIGHT';
+                                            
+     var alist = document.querySelectorAll('a');
+            var i = 0;
+            while (i < alist.length) {
+                console.log(alist[i]);
+                alist[i].style.color = 'blue';
+                i = i + 1;
+            }
      }
     ">
     <div id="grid">
@@ -33,6 +50,7 @@
             <p>JavaScript often abbreviated as JS, is a high-level, interpreted programming language. It is a language which is also characterized as dynamic, weakly typed, prototype-based and multi-paradigm.</p>
         </div>
     </div>
+
 </body>
 
 </html>
