@@ -5,38 +5,41 @@
     <meta charset="utf-8">
     <title>HTML</title>
     <link rel="stylesheet" href="style.css">
+        <script>
+        function nightDayHandler(self) {
+            var target = document.querySelector('body');
+            if (self.value === 'NIGHT') {
+                target.style.backgroundColor = 'black';
+                target.style.color = 'white';
+                self.value = 'DAY';
+
+                var alist = document.querySelectorAll('a');
+                var i = 0;
+                while (i < alist.length) {
+                    alist[i].style.color = 'powderblue';
+                    i = i + 1;
+                }
+            } else {
+                target.style.backgroundColor = 'white';
+                target.style.color = 'black';
+                self.value = 'NIGHT';
+
+                var alist = document.querySelectorAll('a');
+                var i = 0;
+                while (i < alist.length) {
+                    alist[i].style.color = 'blue';
+                    i = i + 1;
+                }
+            }
+        }
+
+    </script>
 </head>
 
 <body>
     <h1><a href="index.html">WEB</a></h1>
     <input type="button" value="NIGHT" onclick="
-                                                    
-     var target = document.querySelector('body');
-     if(this.value === 'NIGHT'){
-     target.style.backgroundColor ='black';
-     target.style.color ='white';
-     this.value = 'DAY';
-                                                    
-     var alist = document.querySelectorAll('a');
-            var i = 0;
-            while (i < alist.length) {
-                console.log(alist[i]);
-                alist[i].style.color = 'powderblue';
-                i = i + 1;
-            }                                                
-     } else{
-     target.style.backgroundColor ='white';
-     target.style.color ='black';
-     this.value = 'NIGHT';
-                                            
-     var alist = document.querySelectorAll('a');
-            var i = 0;
-            while (i < alist.length) {
-                console.log(alist[i]);
-                alist[i].style.color = 'blue';
-                i = i + 1;
-            }
-     }
+        nightDayHandler(this);
     ">
     
     <div id="grid">
