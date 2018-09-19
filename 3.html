@@ -6,32 +6,27 @@
     <title>javaScript</title>
     <link rel="stylesheet" href="style.css">
     <script>
+        function setColor(color){
+            var alist = document.querySelectorAll('a');
+                var i = 0;
+                while (i < alist.length) {
+                    alist[i].style.color = color;
+                    i = i + 1;
+                }
+        }
+        
         function nightDayHandler(self) {
             var target = document.querySelector('body');
             if (self.value === 'NIGHT') {
                 target.style.backgroundColor = 'black';
                 target.style.color = 'white';
                 self.value = 'DAY';
-
-                var alist = document.querySelectorAll('a');
-                var i = 0;
-                while (i < alist.length) {
-                    console.log(alist[i]);
-                    alist[i].style.color = 'powderblue';
-                    i = i + 1;
-                }
+                setColor('powderblue');
             } else {
                 target.style.backgroundColor = 'white';
                 target.style.color = 'black';
                 self.value = 'NIGHT';
-
-                var alist = document.querySelectorAll('a');
-                var i = 0;
-                while (i < alist.length) {
-                    console.log(alist[i]);
-                    alist[i].style.color = 'blue';
-                    i = i + 1;
-                }
+                setColor('blue');
             }
         }
 
