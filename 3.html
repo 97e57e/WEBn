@@ -6,7 +6,7 @@
     <title>javaScript</title>
     <link rel="stylesheet" href="style.css">
     <script>
-        function setColor(color){
+        function setLinkColor(color){
             var alist = document.querySelectorAll('a');
                 var i = 0;
                 while (i < alist.length) {
@@ -15,21 +15,22 @@
                 }
         }
         
+        function setBackgroundColor(color){ document.querySelector('body').style.backgroundColor = color; }
+        function setBodyColor(color){ document.querySelector('body').style.color = color;}
+        
         function nightDayHandler(self) {
-            var target = document.querySelector('body');
             if (self.value === 'NIGHT') {
-                target.style.backgroundColor = 'black';
-                target.style.color = 'white';
+                setBackgroundColor('black');
+                setBodyColor('white');
                 self.value = 'DAY';
-                setColor('powderblue');
+                setLinkColor('powderblue');
             } else {
-                target.style.backgroundColor = 'white';
-                target.style.color = 'black';
+                setBackgroundColor('white');
+                setBodyColor('black');
                 self.value = 'NIGHT';
-                setColor('blue');
+                setLinkColor('blue');
             }
         }
-
     </script>
 </head>
 
