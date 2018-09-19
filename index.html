@@ -43,33 +43,31 @@
 
     </style>
     <script>
+        function setLinkColor(color){
+            var alist = document.querySelectorAll('a');
+                var i = 0;
+                while (i < alist.length) {
+                    alist[i].style.color = color;
+                    i = i + 1;
+                }
+        }
+        
+        function setBackgroundColor(color){ document.querySelector('body').style.backgroundColor = color; }
+        function setBodyColor(color){ document.querySelector('body').style.color = color;}
+        
         function nightDayHandler(self) {
-            var target = document.querySelector('body');
             if (self.value === 'NIGHT') {
-                target.style.backgroundColor = 'black';
-                target.style.color = 'white';
+                setBackgroundColor('black');
+                setBodyColor('white');
                 self.value = 'DAY';
-
-                var alist = document.querySelectorAll('a');
-                var i = 0;
-                while (i < alist.length) {
-                    alist[i].style.color = 'powderblue';
-                    i = i + 1;
-                }
+                setLinkColor('powderblue');
             } else {
-                target.style.backgroundColor = 'white';
-                target.style.color = 'black';
+                setBackgroundColor('white');
+                setBodyColor('black');
                 self.value = 'NIGHT';
-
-                var alist = document.querySelectorAll('a');
-                var i = 0;
-                while (i < alist.length) {
-                    alist[i].style.color = 'blue';
-                    i = i + 1;
-                }
+                setLinkColor('blue');
             }
         }
-
     </script>
 </head>
 
