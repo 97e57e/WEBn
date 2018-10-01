@@ -6,31 +6,41 @@
     <title>HTML</title>
     <link rel="stylesheet" href="style.css">
     <script>
-        function setLinkColor(color){
-            var alist = document.querySelectorAll('a');
+        var Links = {
+            setColor: function(color) {
+                var alist = document.querySelectorAll('a');
                 var i = 0;
                 while (i < alist.length) {
                     alist[i].style.color = color;
                     i = i + 1;
                 }
-        }
-        
-        function setBackgroundColor(color){ document.querySelector('body').style.backgroundColor = color; }
-        function setBodyColor(color){ document.querySelector('body').style.color = color;}
-        
-        function nightDayHandler(self) {
-            if (self.value === 'NIGHT') {
-                setBackgroundColor('black');
-                setBodyColor('white');
-                self.value = 'DAY';
-                setLinkColor('powderblue');
-            } else {
-                setBackgroundColor('white');
-                setBodyColor('black');
-                self.value = 'NIGHT';
-                setLinkColor('blue');
             }
         }
+
+        var Body = {
+            setColor: function(color) {
+                document.querySelector('body').style.color = color;
+            },
+            setBackgroundColor: function(color) {
+                document.querySelector('body').style.backgroundColor = color;
+            }
+        }
+
+
+        function nightDayHandler(self) {
+            if (self.value === 'NIGHT') {
+                Body.setBackgroundColor('black');
+                Body.setColor('white');
+                self.value = 'DAY';
+                Links.setColor('powderblue');
+            } else {
+                Body.setBackgroundColor('white');
+                Body.setColor('black');
+                self.value = 'NIGHT';
+                Links.setColor('blue');
+            }
+        }
+
     </script>
 </head>
 
@@ -39,7 +49,7 @@
     <input type="button" value="NIGHT" onclick="
         nightDayHandler(this);
     ">
-    
+
     <div id="grid">
         <ol>
             <li><a href="1.html" id="active">HTML</a></li>
